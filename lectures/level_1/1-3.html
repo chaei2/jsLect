@@ -11,7 +11,8 @@
   <body>
     <div class="alert-box" id="alert">
       <p id="alert-text">알림창</p>
-      <button onclick="controlAlert('none')">닫기</button>
+      <!-- <button id="close" onclick="controlAlert('none')">닫기</button> -->
+      <button id="close">닫기</button>
     </div>
     <button onclick="controlAlert('block', '아이디를 입력해주세요.')">
       아이디
@@ -21,10 +22,15 @@
     </button>
 
     <script>
+      document.getElementById('close').addEventListener('click', function () {
+        document.getElementById('alert').style.display = 'none';
+      });
+
       function controlAlert(display, content) {
         document.getElementById('alert').style.display = display;
-        
+
         // innerHTML은 태그 안쪽에 이쓴ㄴ 모든 컨텐츠를 바꿔주는 거라 없어지는거임
+        // 그래서 p 태그로 감싸주면 잘 보임 물론 id도 바꾸곡
         document.getElementById('alert-text').innerHTML = content;
       }
     </script>
