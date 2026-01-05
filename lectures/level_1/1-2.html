@@ -7,24 +7,41 @@
 
     <title>1-2 동적 UI 1</title>
   </head>
+  <!-- 강의 링크: https://jaehun-kang.github.io/JS_Lecture/ -->
   <body>
     <div class="alert-box" id="alert">
       알림창
 
-      <button onclick="closeAlert()">닫기</button>
+      <!-- <button onclick="closeAlert()">닫기</button>
     </div>
-    <button onclick="openAlert()">열기</button>
+    <button onclick="openAlert()">열기</button> -->
+
+      <!-- = display;에 controlAlert('none')이 들어가서 실해되는거임 된거임 -->
+      <button onclick="controlAlert('none')">닫기</button>
+    </div>
+    <button onclick="controlAlert('block')">열기</button>
 
     <script>
       // <button onclick="document.getElementById('alert').style.display = 'none'">닫기</button>
       // 를 줄이기 위한 것임
 
-      function closeAlert() {
-        document.getElementById('alert').style.display = 'none';
-      }
+      // function closeAlert() {
+      //   document.getElementById('alert').style.display = 'none';
+      // }
 
-      function openAlert() {
-        document.getElementById('alert').style.display = 'block';
+      // function openAlert() {
+      //   document.getElementById('alert').style.display = 'block';
+      // }
+
+      // 이것도 하나로 줄여줄 거임 -> function closeAlert(), function openAlert()
+
+      // function controlAlert(show) {
+      //   document.getElementById('alert').style.display = show;
+      // }
+      // show로 바꿔도 잘 작동함
+
+      function controlAlert(display) {
+        document.getElementById('alert').style.display = display;
       }
     </script>
   </body>
