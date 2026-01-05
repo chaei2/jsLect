@@ -176,12 +176,10 @@
 
         if (mid > 100 || final > 100 || mid < 0 || final < 0) {
           alert('점수를 잘못 입력했습니다.');
-        } else if (mid < 40 || final < 40) {
+        } else if (mid < 40 || final < 40 || mid + final < 120) {
           console.log('불합격');
-        } else if (mid + final >= 120) {
-          console.log('합격');
         } else {
-          console.log('불합격');
+          console.log('합격');
         }
 
         // if (mid < 40 || final < 40) {
