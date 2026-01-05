@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./1-2.css" />
+
+    <title>1-2 동적 UI 1</title>
+  </head>
+  <body>
+    <div class="alert-box" id="alert">
+      알림창
+
+      <button onclick="document.getElementById('alert').style.display = 'none'">
+        닫기
+      </button>
+    </div>
+    <button onclick="document.getElementById('alert').style.display = 'block'">
+      열기
+    </button>
+
+    <script>
+      function closeAlert() {}
+    </script>
+  </body>
+</html>

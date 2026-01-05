@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="hello">안녕하세요</h1>
+    <h1 id="hi">반갑습니다.</h1>
+    <p>문장입니다.</p>
+
+    <script>
+      // #은 안 붙여도 됨
+      // innerHTML: hello 요소를 찾아서 그 안에 있는 내용을 출력
+      //  = '자바스크립트': hello 요소 안에 있는 내용을 '자바스크립트'로 변경
+      document.getElementById('hello').innerHTML = '자바스크립트';
+
+      document.getElementById('hi').style.color = 'red';
+      document.getElementById('hi').style.fontSize = '10rem';
+
+      document.getElementsByTagName('p')[0].innerHTML = 'sadsd';
+    </script>
+  </body>
+</html>
