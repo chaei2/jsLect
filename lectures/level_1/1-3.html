@@ -17,21 +17,21 @@
     <button onclick="openAlert()">열기</button> -->
 
       <!-- = display;에 controlAlert('none')이 들어가서 실해되는거임 된거임 -->
-      <button onclick="controlAlert('none')">닫기</button>
-    </div>
-    <button onclick="controlAlert('block')">아이디</button>
 
-    <div class="alert-box" id="passwordAlert">
-      비밀번호를 입력해주세요.
       <button onclick="controlAlert('none')">닫기</button>
     </div>
-    <button onclick="controlAlert('block')">비밀번호</button>
+    <button onclick="controlAlert('block', '아이디를 입력해주세요.')">
+      아이디
+    </button>
+    <button onclick="controlAlert('block', '비밀번호를 입력해주세요.')">
+      비밀번호
+    </button>
 
     <script>
       function controlAlert(display, content) {
         document.getElementById('alert').style.display = display;
 
-        document.getElementById('passwordAlert').style.display = display;
+        document.getElementById('alert').innerHTML = content;
       }
     </script>
   </body>
