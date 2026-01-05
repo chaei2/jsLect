@@ -11,16 +11,21 @@
     <div class="alert-box" id="alert">
       알림창
 
-      <button onclick="document.getElementById('alert').style.display = 'none'">
-        닫기
-      </button>
+      <button onclick="closeAlert()">닫기</button>
     </div>
-    <button onclick="document.getElementById('alert').style.display = 'block'">
-      열기
-    </button>
+    <button onclick="openAlert()">열기</button>
 
     <script>
-      function closeAlert() {}
+      // <button onclick="document.getElementById('alert').style.display = 'none'">닫기</button>
+      // 를 줄이기 위한 것임
+
+      function closeAlert() {
+        document.getElementById('alert').style.display = 'none';
+      }
+
+      function openAlert() {
+        document.getElementById('alert').style.display = 'block';
+      }
     </script>
   </body>
 </html>
