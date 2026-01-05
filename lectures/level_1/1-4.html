@@ -29,12 +29,14 @@
       <div class="white-bg">
         <h4>로그인하세요</h4>
 
+        <!-- if else에서 참이면 그 이후에는 실행하지 않음 -->
+
         <form action="success.html">
           <div class="my-3">
-            <input type="text" class="form-control" />
+            <input type="text" id="email" class="form-control" />
           </div>
           <div class="my-3">
-            <input type="password" class="form-control" />
+            <input type="password" id="pw" class="form-control" />
           </div>
           <button type="submit" class="btn btn-primary">전송</button>
           <button type="button" class="btn btn-danger" id="close">닫기</button>
@@ -107,6 +109,16 @@
       $('#close').on('click', function () {
         $('.black-bg').css('visibility', 'hidden');
         $('.black-bg').css('opacity', '0');
+      });
+
+      $('form').on('submit', function (e) {
+        if (document.querySelector('#email').value == '') {
+          e.preventDefault();
+        } else if (document.querySelector('#pw').value == '') {
+          e.preventDefault();
+        } else if (document.querySelector('#pw').value.length <= 8) {
+          e.preventDefault();
+        }
       });
     </script>
   </body>
