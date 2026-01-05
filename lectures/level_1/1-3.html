@@ -21,33 +21,17 @@
     </div>
     <button onclick="controlAlert('block')">아이디</button>
 
-    <div class="alert-box" id="alert">
+    <div class="alert-box" id="passwordAlert">
       비밀번호를 입력해주세요.
       <button onclick="controlAlert('none')">닫기</button>
     </div>
     <button onclick="controlAlert('block')">비밀번호</button>
 
     <script>
-      // <button onclick="document.getElementById('alert').style.display = 'none'">닫기</button>
-      // 를 줄이기 위한 것임
-
-      // function closeAlert() {
-      //   document.getElementById('alert').style.display = 'none';
-      // }
-
-      // function openAlert() {
-      //   document.getElementById('alert').style.display = 'block';
-      // }
-
-      // 이것도 하나로 줄여줄 거임 -> function closeAlert(), function openAlert()
-
-      // function controlAlert(show) {
-      //   document.getElementById('alert').style.display = show;
-      // }
-      // show로 바꿔도 잘 작동함
-
       function controlAlert(display, content) {
         document.getElementById('alert').style.display = display;
+
+        document.getElementById('passwordAlert').style.display = display;
       }
     </script>
   </body>
