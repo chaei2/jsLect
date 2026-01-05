@@ -49,11 +49,22 @@
       <li class="list-group-item">And a fifth one</li>
     </ul>
 
+    <p class="text">감자빵</p>
+    <p class="text">텍스트</p>
+    <p class="text">텍스트</p>
+
+    <button id="text-btn">버튼</button>
+
     <button id="login-btn">로그인</button>
 
     <!-- 클래스 탈부착 방법 element.classList.add("class"); -->
     <!-- querySelector는 지정 되지 않았음 그래서 #, .으로 지정해줘야함 -->
     <script>
+      $('#text-btn').on('click', function () {
+        $('.text').fadeToggle();
+        // $('.text').slideToggle();
+      });
+
       document
         .querySelector('.navbar-toggler')
         .addEventListener('click', function () {
@@ -65,13 +76,25 @@
       //   .addEventListener('click', function () {
       //     document.querySelector('.black-bg').style.display = 'block';
       //   });
+      // 아래 jQuery 버전
+
+      // 애니메이션을 쓸려면 잠시 숨겨야함 block으로 하면 그냥 사라지는거라
+      // $('#login-btn').on('click', function () {
+      //   $('.black-bg').css('display', 'block');
+      // });
+
+      // $('#close').on('click', function () {
+      //   $('.black-bg').css('display', 'none');
+      // });
 
       $('#login-btn').on('click', function () {
-        $('.black-bg').css('display', 'block');
+        $('.black-bg').css('visibility', 'visible');
+        $('.black-bg').css('opacity', '1');
       });
 
       $('#close').on('click', function () {
-        $('.black-bg').css('display', 'none');
+        $('.black-bg').css('visibility', 'hidden');
+        $('.black-bg').css('opacity', '0');
       });
     </script>
   </body>
