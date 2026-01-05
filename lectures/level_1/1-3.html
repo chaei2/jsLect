@@ -10,14 +10,7 @@
   <!-- 강의 링크: https://jaehun-kang.github.io/JS_Lecture/ -->
   <body>
     <div class="alert-box" id="alert">
-      아이디를 입력해주세요.
-
-      <!-- <button onclick="closeAlert()">닫기</button>
-    </div>
-    <button onclick="openAlert()">열기</button> -->
-
-      <!-- = display;에 controlAlert('none')이 들어가서 실해되는거임 된거임 -->
-
+      <p id="alert-text">알림창</p>
       <button onclick="controlAlert('none')">닫기</button>
     </div>
     <button onclick="controlAlert('block', '아이디를 입력해주세요.')">
@@ -30,8 +23,9 @@
     <script>
       function controlAlert(display, content) {
         document.getElementById('alert').style.display = display;
-
-        document.getElementById('alert').innerHTML = content;
+        
+        // innerHTML은 태그 안쪽에 이쓴ㄴ 모든 컨텐츠를 바꿔주는 거라 없어지는거임
+        document.getElementById('alert-text').innerHTML = content;
       }
     </script>
   </body>
