@@ -18,7 +18,53 @@
       referrerpolicy="no-referrer"
     ></script>
 
-    <title>Retrun</title>
+    <title>return</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      function plus() {
+        // var number = 1;
+        // console.log('!!!!!');
+        return Number(0.1 + 0.2).toFixed(1);
+        // return은 함수 종료의 기능도 있어서 위에 적용이 다 되면 아래는 실행하지 않고 종료함
+      }
+
+      // Number를 쓰지 않으면 안됨
+      console.log(0.3);
+      console.log(plus());
+
+      // 퀴즈1
+
+      function toMs(min, sec) {
+        return (min * 60, sec) * 1000;
+
+        // min과 sec를 밀리초 단위로 변환하여 반환
+      }
+
+      console.log(toMs(1, 30)); // 90000
+      console.log(toMs(2, 10)); // 130000
+
+      // 퀴즈2
+      function salePrice(price, isFirstBuy) {
+        // 가격에서 10% 세일한 가격을 반환
+        // 단, 첫 구매자라면 1.5달러 추가 할인
+        // 소수점 둘째 자리에서 반올림
+
+        if (isFirstBuy) {
+          return Number((price * 0.9 - 1.5).toFixed(2));
+        } else {
+          return Number((price * 0.9).toFixed(2));
+        }
+
+        // price = price - price * 0.1;
+        // isFirstBuy = price - 1.5;
+        // return Number(price).toFixed(2);
+        // return Number(isFirstBuy).toFixed(2);
+      }
+
+      console.log(salePrice(70, false)); // 63
+      console.log(salePrice(10, true)); // 7.5
+      console.log(salePrice(10.3, true)); // 7.77
+    </script>
+  </body>
 </html>
