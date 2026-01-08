@@ -21,7 +21,7 @@
 
     <link rel="stylesheet" href="../level_1/1-4.css" />
 
-    <title>Document</title>
+    <title>regex 응용</title>
   </head>
   <body>
     <!-- 로그인 모달창 -->
@@ -92,7 +92,8 @@
       });
 
       $('form').on('submit', function (e) {
-        if (document.querySelector('#email').value == '') {
+        if (!/\S+@\S+\.\S+/.test(document.querySelector('#email').value)) {
+          alert('올바른 이메일을 입력해주세요.');
           e.preventDefault();
         } else if (document.querySelector('#pw').value == '') {
           e.preventDefault();
