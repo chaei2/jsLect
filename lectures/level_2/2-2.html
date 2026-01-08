@@ -22,6 +22,47 @@
     <title>1-2 setTimeout / Interval</title>
   </head>
   <body>
-    
+    <div class="alert alert-danger">
+      <span>5</span>초 이내 구매시 사은품 증정
+    </div>
+
+    <script>
+      // setTimeout은 1회성임, 즉 다시 실행하지 않는 이상 딱 한 번만 실행함
+      setTimeout(function () {
+        console.log('타임아웃');
+        // num 밀리초 후 실행할 코드
+      }, 2000);
+
+      var timer = setInterval(function () {
+        clearInterval(timer);
+        console.log('인터벌');
+        // num 밀리초마다 실행할 코드
+      }, 1000);
+
+      // setTimeout(onTimeout, timeout);
+      // function onTimeout() {
+      //   console.log('인터벌');
+      // }도 사용가능
+
+      // element.innerHTML
+      // setInterval(noAlert, 5000);
+      // function noAlert() {
+      //   if ($('.count').html < 0) {
+      //     $('.count').css('display', 'none');
+      //     // clearTimeout(noAlert);
+      //   }
+      //   console.log('noAlert');
+      // }
+
+      var count = 5;
+      setInterval(function () {
+        count--;
+        $('span').html(count);
+      }, 1000);
+
+      setTimeout(function () {
+        $('alert').css('display', 'none');
+      }, 5000);
+    </script>
   </body>
 </html>

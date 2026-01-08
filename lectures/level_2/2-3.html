@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      ;
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <title>Regex</title>
+  </head>
+  <body>
+    <script>
+      console.log('text'.includes('~~~~~~'));
+      // regex는 특정 패턴을 찾는거임
+      // 패턴도 그런식의 패턴도 찾을 수 있기에 하는 거임
+      // 구조는 //사이에 집어넣는거임
+
+      // ''라는 글자가 포함되어있는지
+      console.log(/a/.test('abcde'));
+      console.log(/[a-z]/.test('abcde'));
+      console.log(/[a-zA-z]/.test('abcdeAAAAA'));
+      console.log(/[ㄱ-ㅎㅏ-ㅣ가-힣]/.test('ㅇ'));
+      console.log(/\S/.test('.'));
+
+      // 문자열이 'a'로 시작하는지
+      console.log(/^안/.test('안녕'));
+      console.log(/안$/.test('녕안'));
+
+      console.log(/a|b/.test('bbbb'));
+      console.log(/a+b/.test('ab'));
+      console.log(/\S+/.test('ab'));
+      console.log(/\S+@\S+\.\S+/.test('sdadaadsa@google.gmail'));
+    </script>
+  </body>
+</html>
