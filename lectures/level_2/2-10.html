@@ -18,11 +18,14 @@
     <title>탭 메뉴 응용</title>
   </head>
   <body>
+
     <div class="container">
       <ul class="list">
-        <li class="tab-button orange">Products</li>
-        <li class="tab-button">Information</li>
-        <li class="tab-button">Shipping</li>
+        <!-- data-button="1"과 같은건 값을 찾아주는 게 아니라 값을 숨겨놓는거임 -->
+        <li class="tab-button orange" 
+        data-button="0">Products</li>
+        <li class="tab-button" data-button="1">Information</li>
+        <li class="tab-button" data-button="2">Shipping</li>
       </ul>
       <div class="tab-content show">
         <p>상품설명입니다. Product</p>
