@@ -135,16 +135,17 @@
         // 잔체 스크롤 할 수 있는 양 대비 퍼센트로 나누면 됨
         // 현재 스크롤 위치 / 전체 스크롤 양 * 0.01
 
+        // 현재 스크롤 위치
+        var windowScollY = $(window).scrollTop();
+
+        // 스크롤 가능한 양
+        var scrollable =
+          document.querySelector('html').scrollHeight -
+          document.querySelector('html').clientHeight;
         $('.scroll-progress').css(
           'width',
-          ($(window).scrollTop() /
-            (document.querySelector('html').scrollHeight -
-              document.querySelector('html').clientHeight)) *
-            100 +
-            '%'
+          (windowScollY / scrollable) * 100 + '%'
         );
-        // document.querySelector('.scroll-progress').style.width = progress + '%';
-        // $('.scroll-progress').css('width', '${progress}');
       });
 
       $('.lorem').on('scroll', function () {
