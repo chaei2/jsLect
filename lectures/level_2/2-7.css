@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'PyeongChangPeace-Light';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Light.woff2')
+    format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 5000px;
+}
+
+.navbar {
+  position: fixed;
+  background-color: rgb(240, 240, 240);
+  padding: 10px;
+  width: 100%;
+  top: 0;
+  z-index: 5;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo_img {
+  height: 64px;
+  width: auto;
+  transition: height 1s;
+}
+
+.logo_text {
+  font-family: 'PyeongChangPeace-Light', sans-serif;
+  font-size: 28px;
+  line-height: 100%;
+  transition: font-size 1s;
+}
+
+.agreed {
+  background-color: blue;
+  color: white;
+}
+
+.scroll-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background-color: black;
+  /* width: 50%; */
+  width: 0%;
+  transition: width 150ms;
+}
