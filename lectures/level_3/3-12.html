@@ -33,24 +33,24 @@
 
         //  첫 번쨰 이미지
         opacity1 = -0.002 * scrollH + 1.4;
-        $('.card-box').eq(0).css('opacity', opacity1);
-
         scale1 = -0.0002 * scrollH + 1.04;
 
         if (scrollH < 200) {
           scale1 = 1;
         }
+
+        $('.card-box').eq(0).css('opacity', opacity1);
         $('.card-box').eq(0).css('scale', scale1);
 
         //  두 번쨰 이미지
         opacity2 = -0.002 * scrollH + 2.4;
-        $('.card-box').eq(1).css('opacity', opacity2);
-
         scale2 = -0.0002 * scrollH + 1.14;
 
         if (scrollH < 700) {
           scale2 = 1;
         }
+
+        $('.card-box').eq(1).css('opacity', opacity2);
         $('.card-box').eq(1).css('scale', scale2);
 
         //  세 번쨰 이미지
@@ -82,6 +82,7 @@
       //  세 번쨰 이미지
       // 200일 떄 scrollH: 1200, opacity : 1, scale: 1
       // 700일 떄 scrollH: 1500, opacity : 0, scale: 0.9
+      // 는 귀찮으니깐 안함
 
       // scale 식
       // 1 = -0.0002 * 200 + 1.04;
