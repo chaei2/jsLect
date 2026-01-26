@@ -48,7 +48,7 @@
       $('img')
         .eq(0)
         .on('mousemove', function (e) {
-          console.log(`mousemove X :  ${startX - e.clientX}`);
+          // console.log(`mousemove X :  ${startX - e.clientX}`);
           if (pressed) {
             $('.slide-container').css(
               'transform',
@@ -80,6 +80,37 @@
           //   $('.slide-container').css('transform', `translateX(0vw)`);
           // }
         });
+
+      // 터치이벤또
+      $('img')
+        .eq(0)
+        .on('touchstart', function (e) {
+          console.log(
+            `touchstart :  ${e.touches[0].clientX} Y :${e.touches[0].clientY}`,
+          );
+          startX = e.touches[0].clientX;
+          pressed = true;
+        });
+
+      $('img')
+        .eq(0)
+        .on('touchmove', function (e) {
+          console.log(
+            `touchmove :  ${e.touches[0].clientX} Y :${e.touches[0].clientY}`,
+          );
+          if (pressed) {
+            $('.slide-container').css(
+              'transform',
+              `translateX(-${startX - e.touches[0].clientX}px)`,
+            );
+          }
+        });
+
+      // 놓친 부분 있음 나중에 복붙해야함
+      // pointerdown은 touches를 안 써도 잘 됨.
+      $('.slide-container').on('pointerdown', function (e) {
+        console.log('pointerdown' + e.clientX);
+      });
 
       // 누르고 100px 하고 때면 다른 이미지로 넘어가게 할 거임
       // mouseup일때가 더 크면 넘어감
