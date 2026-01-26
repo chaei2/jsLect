@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      ;
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <title>switch</title>
+  </head>
+  <body>
+    <div id="quiz">
+      <h4>무인도에 들고 갈 한 가지는?</h4>
+      <button>핸드폰</button>
+      <button>칼</button>
+      <button>씨앗</button>
+      <button>침낭</button>
+    </div>
+
+    <script>
+      var phone =
+        '당신은 즐거움을 최우선으로 생각합니다. 심심할 걱정은 없겠네요!';
+      var knife =
+        '당신은 효율성을 중시합니다. 적절한 도구 하나면 충분하겠네요!';
+      var seed = '당신은 지속성을 최우선으로 생각합니다. 굶을 걱정은 없겠네요!';
+      var bedding =
+        '당신은 정서적 안정을 최우선으로 생각합니다. 추울 걱정은 없겠네요!';
+
+      // let num = 1 + 2;
+
+      // switch (num) {
+      //   case 3:
+      //     console.log('3임');
+      //     break;
+
+      //   case 4:
+      //     console.log('4임');
+      //     break;
+
+      //   default:
+      //     console.log('3, 4 ㄴ');
+      // }
+
+      // $('button').on('click', function (e) {
+      //   var selected = $(this).text();
+      //   switch (selected) {
+      //     case '핸드폰':
+      //       alert(phone);
+      //       break;
+      //     case '칼':
+      //       alert(knife);
+      //       break;
+      //     case '씨앗':
+      //       alert(seed);
+      //       break;
+      //     case '침낭':
+      //       alert(bedding);
+      //       break;
+      //   }
+      // });
+
+      $('button').on('click', function (e) {
+        var selected = $(this).index();
+        console.log(selected);
+        switch (selected) {
+          case 1:
+            alert(phone);
+            break;
+          case 2:
+            alert(knife);
+            break;
+          case 3:
+            alert(seed);
+            break;
+          case 4:
+            alert(bedding);
+            break;
+        }
+      });
+    </script>
+  </body>
+</html>
