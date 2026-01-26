@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>장바구니</title>
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h3>장바구니</h3>
+    <ul class="list"></ul>
+
+    <script>
+      var productList = JSON.parse(localStorage.getItem("cart"));
+      console.log(productList);
+      productList.forEach((i) => {
+        var newproduct = `<li>${i.name} ${i.count}개</li>`;
+        $(".list").append(newproduct);
+      });
+    </script>
+  </body>
+</html>
