@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      ;
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scroll</title>
+    <link rel="stylesheet" href="./3-12.css" />
+  </head>
+  <body>
+    <div class="card-bg">
+      <div class="card-box">
+        <img src="../../assets/car1.png" />
+      </div>
+      <div class="card-box">
+        <img src="../../assets/car2.png" />
+      </div>
+      <div class="card-box">
+        <img src="../../assets/car3.png" />
+      </div>
+    </div>
+    <script>
+      $(window).scroll(function () {
+        var scrollH = $(window).scrollTop();
+        console.log(scrollH);
+
+        //  첫 번쨰 이미지
+        opacity1 = -0.002 * scrollH + 1.4;
+        $('.card-box').eq(0).css('opacity', opacity1);
+
+        scale1 = -0.0002 * scrollH + 1.04;
+
+        if (scrollH < 200) {
+          scale1 = 1;
+        }
+        $('.card-box').eq(0).css('scale', scale1);
+
+        //  두 번쨰 이미지
+        opacity2 = -0.002 * scrollH + 2.4;
+        $('.card-box').eq(1).css('opacity', opacity2);
+
+        scale2 = -0.0002 * scrollH + 1.14;
+
+        if (scrollH < 700) {
+          scale2 = 1;
+        }
+        $('.card-box').eq(1).css('scale', scale2);
+
+        //  세 번쨰 이미지
+        // 귀찮으니깐 패스.
+      });
+
+      //  첫 번쨰 이미지
+      // 200일 떄 scrollH: 200, opacity : 1, scale: 1
+      // 700일 떄 scrollH: 700, opacity : 0, scale: 0.9
+
+      //  두 번쨰 이미지
+      // 200일 떄 scrollH: 700, opacity : 1, scale: 1
+      // 700일 떄 scrollH: 1200, opacity : 0, scale: 0.9
+
+      // scale
+      // 1 = -0.0002 * 700 + 1.14;
+      // 0.9 = -0.0002 * 1200 + 1.14;
+
+      // a = -0.0002
+      // b = 1.14
+
+      // opacity
+      // 1 = -0.002 * 700 + 2.4;
+      // 0 = -0.002 * 1200 + 2.4;
+
+      // a = -0.002
+      // b = 2.4
+
+      //  세 번쨰 이미지
+      // 200일 떄 scrollH: 1200, opacity : 1, scale: 1
+      // 700일 떄 scrollH: 1500, opacity : 0, scale: 0.9
+
+      // scale 식
+      // 1 = -0.0002 * 200 + 1.04;
+      // 0.9 = -0.0002 * 700 + 1.04;
+      // a= -0.0002
+      // b = 1.04
+
+      // opacity 식
+      // y = a * x + b;
+      // 1 = a * 200 + b;
+      // 0 = a * 700 + b;
+      // 이 규칙을 가지고 식을 만들 수 있음
+      // a = - 0.002
+      // b = 1.4
+    </script>
+  </body>
+</html>
